@@ -1,33 +1,45 @@
 def zgadywanka():
     print("Pomyśl liczbę 1-1000 a ja zgadną ją w max. 10 prób")
-    min = 1
-    max = 1000
+    zgadywanka.z_min = 1
+    zgadywanka.z_max = 1000
+
 
     def za_duzo():
-        zgadywanka.max = guess
+        zgadywanka.z_max = zgadywanka.guess
 
     def za_malo():
-        zgadywanka.min = guess
+        zgadywanka.z_min = zgadywanka.guess
 
     def zgadlem():
         print("Wygrałem!")
 
-    while True:
-        guess = int((max-min)/2) + 1
-        print(f"Zgaduję...  + {guess}")
-        guessed = input("Zgadłem? y/n: ")
+    def selector(question):
+        while True:
+            result = input(f"{question} Y/N: ")
+            if result in ("y", "n", "Y", "N"):
+                return True if result in ("y", "Y") else False
 
-        if guessed == "y":
+    while True:
+        zgadywanka.guess = int((zgadywanka.z_max - zgadywanka.z_min)/2) + zgadywanka.z_min
+        print(f"Zgaduję...  {zgadywanka.guess}")
+
+        if selector("Zgadłem?"):
             zgadlem()
             break
-        too_much = input("Za dużo? y/n: ")
 
-        if too_much == "y":
+        if selector("Za dużo?"):
             za_duzo()
             continue
-        if
+
+        if selector("Za mało?"):
+            za_malo()
+            continue
+
+        print("Nie oszukuj!")
+        continue
 
 
+zgadywanka()
 
 
 

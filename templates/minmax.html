@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Wymyśl liczbę od 1 do 1000, a ja ją zgadnę:</h1>
+<br>
+<h1>ZGADUJĘ... {{ guess }}</h1>
+<br>
+<form action="/" method="post">
+    <input type="hidden" name="secret_min" value="{{ secret_min }}">
+    <input type="hidden" name="secret_max" value="{{ secret_max }}">
+    <button name="choice" type="submit" value="za_duzo">ZA DUŻO</button>
+    <button name="choice" type="submit" value="za_malo">ZA MAŁO</button>
+    <button name="choice" type="submit" value="trafiles">TRAFIŁEŚ</button>
+</form>
+</body>
+</html>
