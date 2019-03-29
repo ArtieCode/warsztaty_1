@@ -1,0 +1,8 @@
+*.sublime-*
+tags
+
+env
+.idea/*
+*.iml
+.DS_Store
+__pycache__
