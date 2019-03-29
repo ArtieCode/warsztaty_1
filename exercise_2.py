@@ -53,9 +53,7 @@ def lotto():
     def results():
         lotto.numbers.sort()
 
-        for number in lotto.numbers:
-            if number in lotto.secret:
-                lotto.lucky += 1
+        lotto.lucky = len(set(lotto.numbers).intersection(set(lotto.secret)))
         if not lotto.user_quit:
             print(f"Twoje liczby to: {lotto.numbers}, zwycięskie liczby to: {lotto.secret}, Trafiłeś {lotto.lucky}")
             initialise()
